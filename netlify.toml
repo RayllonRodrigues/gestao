@@ -1,8 +1,16 @@
-# netlify.toml — site estático
+# netlify.toml — configuração para site estático
 [build]
-  publish = "."   # publica a pasta raiz (onde está o index.html)
+  # Não há comando de build, apenas publicar os arquivos da raiz
+  publish = "."
 
-# Opcional: cache básico para ativos
+# Se quiser garantir que todas as rotas levem para index.html
+# (útil caso você adicione SPA futuramente)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Cache básico para arquivos estáticos
 [[headers]]
   for = "/**"
   [headers.values]
