@@ -1,7 +1,8 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
+// Configuração para Netlify
 export default defineConfig({
-  base: "./",              // evita 404 de assets no Netlify
+  base: "./",
   plugins: [react()],
 });
